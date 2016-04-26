@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Main Map View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="u6T-Xg-8ta">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="TFX-0m-ygK"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="MapKit" id="SVW-k8-VTR">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="dcd-65-QM8">
+                                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="YgW-OC-A2I">
+                                                <rect key="frame" x="20" y="7" width="191" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <segments>
+                                                    <segment title="Map"/>
+                                                    <segment title="Satellite"/>
+                                                    <segment title="Hybrid"/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wuN-M1-d1M"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7WD-w0-FkH">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ZNV-SX-U0f"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7WD-w0-FkH" firstAttribute="top" secondItem="u6T-Xg-8ta" secondAttribute="bottom" id="1rE-H7-dPO"/>
+                            <constraint firstItem="u6T-Xg-8ta" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FiW-Eu-fMp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7WD-w0-FkH" secondAttribute="bottom" id="FrW-U2-SPt"/>
+                            <constraint firstItem="7WD-w0-FkH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IBL-Da-48x"/>
+                            <constraint firstAttribute="trailing" secondItem="7WD-w0-FkH" secondAttribute="trailing" id="dtd-2C-iEm"/>
+                            <constraint firstItem="u6T-Xg-8ta" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fxz-ko-j5H"/>
+                            <constraint firstAttribute="trailing" secondItem="u6T-Xg-8ta" secondAttribute="trailing" id="ien-eO-bqx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="7WD-w0-FkH" id="nlk-jG-nOL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130" y="122"/>
+        </scene>
+    </scenes>
+</document>
